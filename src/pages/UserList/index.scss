@@ -1,0 +1,229 @@
+.user-list-page {
+  padding: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+
+  .user-list-header {
+    text-align: center;
+    margin-bottom: 24px;
+
+    h1 {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 8px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    p {
+      font-size: 16px;
+      opacity: 0.9;
+      margin-bottom: 16px;
+    }
+
+    .refresh-btn {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      border-radius: 8px;
+      padding: 8px 16px;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      &:disabled {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  .error-message {
+    background: rgba(255, 107, 107, 0.2);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 16px;
+    text-align: center;
+
+    p {
+      margin: 4px 0;
+      font-size: 14px;
+    }
+  }
+
+  .loading-container {
+    text-align: center;
+    padding: 40px 20px;
+
+    p {
+      margin-top: 16px;
+      font-size: 16px;
+      opacity: 0.9;
+    }
+  }
+
+  .user-list-container {
+    .adm-list {
+      background: transparent;
+      border: none;
+
+      .adm-list-header {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px 8px 0 0;
+        color: white;
+        font-weight: bold;
+      }
+
+      .user-item {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 0;
+        margin-bottom: 0;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.15);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        &:last-child {
+          border-radius: 0 0 8px 8px;
+        }
+
+        .adm-list-item-content {
+          color: white;
+        }
+
+        .adm-list-item-title {
+          color: white;
+          font-weight: 600;
+        }
+
+        .adm-list-item-description {
+          color: rgba(255, 255, 255, 0.8);
+        }
+
+        .user-actions {
+          display: flex;
+          gap: 8px;
+
+          .adm-button {
+            font-size: 12px;
+            padding: 4px 8px;
+            height: 28px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+
+            &:hover {
+              background: rgba(255, 255, 255, 0.2);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .learning-points {
+    margin-top: 32px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    h3 {
+      margin: 0 0 16px 0;
+      font-size: 18px;
+      color: white;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+      list-style: none;
+
+      li {
+        margin-bottom: 8px;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.9);
+        position: relative;
+
+        &::before {
+          content: '✅';
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+
+  .comparison {
+    margin-top: 32px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    h3 {
+      margin: 0 0 16px 0;
+      font-size: 18px;
+      color: white;
+      text-align: center;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+
+      .vue-side,
+      .react-side {
+        h4 {
+          margin: 0 0 12px 0;
+          font-size: 16px;
+          color: white;
+          text-align: center;
+        }
+
+        pre {
+          background: rgba(0, 0, 0, 0.3);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 8px;
+          padding: 12px;
+          font-size: 12px;
+          color: #e6e6e6;
+          overflow-x: auto;
+          margin: 0;
+          white-space: pre-wrap;
+          word-break: break-word;
+        }
+      }
+    }
+  }
+}
+
+// 响应式设计
+@media (max-width: 768px) {
+  .user-list-page {
+    padding: 12px;
+
+    .user-list-header h1 {
+      font-size: 24px;
+    }
+
+    .comparison .comparison-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .user-list-container .user-list-container .user-actions {
+      flex-direction: column;
+      gap: 4px;
+    }
+  }
+} 

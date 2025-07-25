@@ -26,6 +26,10 @@ const Home = () => {
         <Link to='/about'>Go to About</Link>
         <br />
         <Link to='/user'>Go to User</Link>
+        <br />
+        <Link to='/todo'>Go to Todo App</Link>
+        <br />
+        <Link to='/user-list'>Go to User List</Link>
       </nav>
     </div>
   );

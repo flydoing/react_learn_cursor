@@ -4,6 +4,8 @@ import About from '@/pages/About';
 import User from '@/pages/User';
 import Douban from '@/pages/Douban';
 import Movie from '@/pages/Movie';
+import Todo from '@/pages/Todo';
+import UserList from '@/pages/UserList';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +27,14 @@ const router = createBrowserRouter([
   {
     path: '/movie',
     element: <Movie />,
+  },
+  {
+    path: '/todo',
+    element: <Todo />,
+  },
+  {
+    path: '/user-list',
+    element: <UserList />,
   },
 ]);
 
